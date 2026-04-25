@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background: #000;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 6rem 1.5rem 3rem;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.portrait {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    filter: grayscale(100%);
+    margin-bottom: 2rem;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
+
+.portrait.loaded {
+    opacity: 1;
+}
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: 200;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.4rem;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #888;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 6rem;
+}
+
+.block {
+    border-top: 1px solid #1f1f1f;
+    padding-top: 1.75rem;
+}
+
+.block h2 {
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 1rem;
+}
+
+.block p {
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: #eaeaea;
+}
+
+.block p + p {
+    margin-top: 0.4rem;
+}
+
+.footer {
+    border-top: 1px solid #1f1f1f;
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.footer .copy {
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 4rem 1.25rem 2rem;
+    }
+
+    .portrait {
+        width: 170px;
+        height: 170px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .block p {
+        font-size: 1rem;
+    }
+}
