@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photos &mdash; Martin Grohme</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="container container--wide">
+        <nav class="nav">
+            <a href="portfolio.html">&larr; zur&uuml;ck</a>
+        </nav>
+
+        <section class="hero">
+            <h1>Photos</h1>
+            <p class="subtitle">Makro</p>
+        </section>
+
+        <section class="gallery" id="gallery" aria-label="Bildergalerie"></section>
+
+        <footer class="footer">
+            <p>Dipl. Ing. Martin Grohme &middot; Kortumweg 1 &middot; 48165 M&uuml;nster</p>
+            <p class="copy">&copy; <span id="year"></span> Martin Grohme</p>
+        </footer>
+    </main>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+        <button class="lightbox__close" id="lightbox-close" aria-label="Schlie&szlig;en">&times;</button>
+        <button class="lightbox__nav lightbox__nav--prev" id="lightbox-prev" aria-label="Vorheriges Bild">&lsaquo;</button>
+        <button class="lightbox__nav lightbox__nav--next" id="lightbox-next" aria-label="N&auml;chstes Bild">&rsaquo;</button>
+
+        <figure class="lightbox__stage">
+            <img class="lightbox__image" id="lightbox-image" alt="">
+
+            <button class="cr-badge" id="cr-badge" aria-label="Content Credentials anzeigen" hidden>
+                <svg viewBox="0 0 32 32" aria-hidden="true">
+                    <path d="M16 2 L28 8 V20 L22 30 H10 L4 20 V8 Z" fill="#000" stroke="currentColor" stroke-width="1.6"/>
+                    <text x="16" y="20" text-anchor="middle" font-size="11" font-weight="700"
+                          font-family="-apple-system, Helvetica, Arial, sans-serif" fill="currentColor">cr</text>
+                </svg>
+            </button>
+        </figure>
+
+        <aside class="exif-panel" id="exif-panel" aria-label="Aufnahmedaten">
+            <div class="exif-panel__loading">lade Metadaten&hellip;</div>
+        </aside>
+
+        <aside class="c2pa-panel" id="c2pa-panel" aria-label="Content Credentials Details" hidden>
+            <header class="c2pa-panel__head">
+                <h3>Content Credentials</h3>
+                <button class="c2pa-panel__close" id="c2pa-close" aria-label="Schlie&szlig;en">&times;</button>
+            </header>
+            <div class="c2pa-panel__body" id="c2pa-body">
+                <div class="c2pa-panel__loading">lade C2PA-Manifest&hellip;</div>
+            </div>
+            <footer class="c2pa-panel__foot">
+                <a href="https://contentcredentials.org/" target="_blank" rel="noopener">Mehr &uuml;ber Content Credentials &rarr;</a>
+            </footer>
+        </aside>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script type="module" src="js/gallery.js"></script>
+</body>
+</html>
