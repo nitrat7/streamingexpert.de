@@ -1,26 +1,49 @@
 // Gallery — overview grid + fullscreen lightbox with client-side EXIF (exifr)
 // and C2PA (c2pa-js) extraction.
+// Each page picks its image set via <section id="gallery" data-gallery="…">.
 
-const IMAGES = [
-    "DSC_5872.jpg",
-    "DSC_5873.jpg",
-    "DSC_5875.jpg",
-    "DSC_5885.jpg",
-    "DSC_5899.jpg",
-    "DSC_5907.jpg",
-    "DSC_5917-Enhanced-NR.jpg",
-    "DSC_5918-Enhanced-NR.jpg",
-    "DSC_5923.jpg",
-];
+const GALLERIES = {
+    "makro": {
+        dir: "images/makro/",
+        images: [
+            "DSC_5872.jpg",
+            "DSC_5873.jpg",
+            "DSC_5875.jpg",
+            "DSC_5885.jpg",
+            "DSC_5899.jpg",
+            "DSC_5907.jpg",
+            "DSC_5917-Enhanced-NR.jpg",
+            "DSC_5918-Enhanced-NR.jpg",
+            "DSC_5923.jpg",
+        ],
+    },
+    "lichtmuseum-unna": {
+        dir: "images/lichtmuseum-unna/",
+        images: [
+            "DSC_7234.jpg",
+            "DSC_7238.jpg",
+            "DSC_7240.jpg",
+            "DSC_7243.jpg",
+            "DSC_7249.jpg",
+            "DSC_7252.jpg",
+            "DSC_7260.jpg",
+            "DSC_7277.jpg",
+            "DSC_7284.jpg",
+            "IMG_3804.jpg",
+        ],
+    },
+};
 
-const THUMB_DIR = "images/makro/";
-const FULL_DIR = "images/makro/big/";
+const gallery = document.getElementById("gallery");
+const config = GALLERIES[gallery.dataset.gallery] || GALLERIES["makro"];
+const IMAGES = config.images;
+const THUMB_DIR = config.dir;
+const FULL_DIR = config.dir + "big/";
 
 const C2PA_VERSION = "0.30.17";
 const C2PA_BASE = `https://cdn.jsdelivr.net/npm/c2pa@${C2PA_VERSION}`;
 const EXIFR_URL = "https://cdn.jsdelivr.net/npm/exifr@7.1.3/dist/full.esm.mjs";
 
-const gallery = document.getElementById("gallery");
 const lightbox = document.getElementById("lightbox");
 const lbImage = document.getElementById("lightbox-image");
 const lbClose = document.getElementById("lightbox-close");

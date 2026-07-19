@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photos &mdash; Martin Grohme</title>
+    <title>Photos: Makro &mdash; Martin Grohme</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <main class="container container--wide">
         <nav class="nav">
-            <a href="portfolio.html">&larr; zur&uuml;ck</a>
+            <a href="index.html">&larr; zur&uuml;ck</a>
         </nav>
 
         <section class="hero">
@@ -17,7 +17,7 @@
             <p class="subtitle">Makro</p>
         </section>
 
-        <section class="gallery" id="gallery" aria-label="Bildergalerie"></section>
+        <section class="gallery" id="gallery" data-gallery="makro" aria-label="Bildergalerie"></section>
 
         <footer class="footer">
             <p>Dipl. Ing. Martin Grohme &middot; Kortumweg 1 &middot; 48165 M&uuml;nster</p>
@@ -34,11 +34,7 @@
             <img class="lightbox__image" id="lightbox-image" alt="">
 
             <button class="cr-badge" id="cr-badge" aria-label="Content Credentials anzeigen" hidden>
-                <svg viewBox="0 0 32 32" aria-hidden="true">
-                    <path d="M16 2 L28 8 V20 L22 30 H10 L4 20 V8 Z" fill="#000" stroke="currentColor" stroke-width="1.6"/>
-                    <text x="16" y="20" text-anchor="middle" font-size="11" font-weight="700"
-                          font-family="-apple-system, Helvetica, Arial, sans-serif" fill="currentColor">cr</text>
-                </svg>
+                <img src="images/cr-logo.png" alt="">
             </button>
         </figure>
 
